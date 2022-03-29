@@ -26,7 +26,7 @@ DallasTemperature sensors(&oneWire);
 DeviceAddress sensor1 = {0x28, 0xFF, 0x64, 0x1E, 0x84, 0x73, 0x32, 0x76};  // 2m cidlo
 DeviceAddress sensor2 = {0x28, 0x96, 0x29, 0x96, 0xF0, 0x01, 0x3C, 0xAA}; // 1m cidlo
 
-LiquidCrystal_I2C lcd(0x27, 20, 4);     // urcenie display 20x4 znakov , adresa i2c 0x27
+LiquidCrystal_I2C lcd(0x27, 20, 4);     // LCD 20/4 , adress i2c 0x27
 
 int in1 = 0;
 int in2 = 0;
@@ -104,13 +104,13 @@ lcd.createChar(3 , ventil);
 WiFi.begin(ssid, password);
 
 timeClient.begin();
-timeClient.setTimeOffset(3600); // plus 1 hodina GMT
+timeClient.setTimeOffset(3600); // GMT+1
 
 sensors.begin();
 sensors.setResolution(sensor1, 9);
 sensors.setResolution(sensor2, 9);
 
-for (int reklama = 0; reklama < 2; reklama++)    // verzia termostatu
+for (int reklama = 0; reklama < 2; reklama++)    // version
   {
     lcd.setCursor(6, 1);
     lcd.print ("M4j0 1.0");
