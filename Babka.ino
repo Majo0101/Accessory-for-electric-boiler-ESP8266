@@ -13,8 +13,8 @@
 #define ONE_WIRE_BUS D7
 #define tuc 1
 
-const char *ssid     = "SIEMENS AP";
-const char *password = "11112222";
+const char *ssid     = "********";
+const char *password = "********";
 int teplota1;
 int teplota2;
 
@@ -221,7 +221,7 @@ else
   lcd.print("  ");
 }
 
-//...................Kotol on off..........................
+//...................Boil on off..........................
 if(in1 == 0)
 {
   lcd.setCursor(11,3);
@@ -235,7 +235,7 @@ else
 
 //.........................................................
 
-//......................fungovanie.........................
+//......................Run.........................
 
 if(in1 == 0 && in2 == 1)
 {
